@@ -1,0 +1,36 @@
+# Name used to describe the policy in API Platform.
+name: Maximum Size
+
+# A more detailed description of the policy.
+description: Sets maximum file size 
+
+# Category is just a plain text used in API Platform to list policies.
+category: Security
+
+# Policy Type.
+type: custom
+
+# True if the policy can work on its own.
+# false if the policy can be applied only as part of another policy.
+standalone: true
+
+requiresConnectivity: false
+
+
+providedCharacteristics: [Message protection]
+requiredCharacteristics: []
+
+# Custom configuration parameters
+configuration:
+  - propertyName: sizeParam 
+    name: Max Request Size
+    description: Maximum message size in MB.
+    type: string
+    optional: false
+    allowMultiple: false
+  - propertyName: denied-message
+    name: Rejection message
+    description: A message to display when an incoming message is rejected.
+    type: string
+    defaultValue: Access denied
+    optional: false  
